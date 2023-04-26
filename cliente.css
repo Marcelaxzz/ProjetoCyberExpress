@@ -1,0 +1,75 @@
+
+.empresa_conteudo {
+    display: flex;
+    width: 940px;   
+}
+
+.logo_empresa{
+    display: flex;
+    width: 400px;
+    height: 400px;
+    margin-right:.8rem;
+}
+
+.empresa__titulo {
+    font-family: 'Roboto', sans-serif;  
+    font-size: 1.0rem;
+    margin-top:2rem;
+    color: #9da2bc;
+    font-weight: bold;
+    text-align: center;
+}
+
+.empresa__paragrafo {
+    font-family: 'Roboto', sans-serif;  
+    font-size: 20px; 
+    margin-bottom:2rem;
+    color: #b4becb;
+    line-height:2.2rem;
+    text-align: center;
+    margin-top:2rem;
+}
+    
+    .empresa_conteudo {
+        display: flex;
+        flex-direction: column; 
+        text-align: center;
+        margin:.5rem
+    }
+
+    .empresa__titulo{
+        margin-top:1rem;
+    }
+
+
+
+/*body{
+    font-family: 'Roboto', sans-serif;
+    color:rgb(100, 100, 242);
+}
+section {
+    width: 940px;
+    margin: 0 auto;
+    text-align: center;
+}
+.imgEmpresa{
+    float: left;
+    margin: 10px;
+    width: 50%;
+}
+h2 {
+    font-size:2em;
+    margin-top: 1em;
+    font-weight: bold;
+}
+p{
+    margin-top: 0em;
+    font-size: 1.5em;
+}
+.exemple-item{
+    display: inline-block;
+    font-size:3em;
+    width: 33.333%;
+    height: 150px;
+    clear: left;
+}

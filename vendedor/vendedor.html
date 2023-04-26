@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do vendedor</title>
+    <link rel="stylesheet" href="vendedor.css">
+    <head>
+        <style>
+            body {
+            background-color: #050449
+            }
+            </style>
+</head>
+<body>
+    <header id="cabecalho">
+        <img src="C:\Users\marce\OneDrive\Imagens\home vendedor.jpeg" alt="Logo Distribuidora Cyber Express Vendedor" class="cabecalhovendedor">
+        <p> SELECIONE OS ITENS ABAIXO PARA PROSSEGUIR:</p>
+    <form>
+        <p>Cliente:</p>
+<select name="cliente">
+    <option></option>
+    <option value="ze">Bar do Zé</option>
+    <option value="dido">Bar do Dido</option>
+    <option value="presidente">Bar do Presidente</option>
+</select>
+<p>Grupo:</p>
+<select value="grupo">
+    <option></option>
+    <option>Aguardente</option>
+</select>
+<p>Produto:</p>
+<select>
+    <option></option>
+    <option value="pinga">Pinga</option>
+</select>
+<p>Pinga:</p>
+<select value="pinga">
+    <option></option>
+    <option>29</option>
+    <option>51</option>
+    <option>61</option>
+</select>
+<p>Quantidade</p>
+<input type="number" min="1">
+<input type="checkbox">
+<label name="unidade">Unidade (s)</label>
+<input type="checkbox">
+<label name="caixa">Caixa (s)</label>
+<p>Variação</p>
+<select value="variacao">
+    <option></option>
+    <option>Ouro</option>
+    <option>Prata</option>
+</select>
+<p>Preço Unitário</p>
+
+          
+    <button type="submit">Adicionar ao carrinho</button>
+    <table border="1">
+        <tr>
+            <td>qtd</td>
+            <td>__</td>
+            <td> Item____________</td>
+            <td>Valor</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>un</td>
+            <td>51</td>
+            <td>9,99</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>cx</td>
+            <td>61</td>
+            <td>79,99</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>total</td>
+            <td>89,98</td>
+        </tr>
+    </table>
+    <button type="submit">Finalizar o pedido</button>
+</body>
+</html>

@@ -1,0 +1,48 @@
+.antRodape {
+    height: 700px;
+    width: 100%;
+    background-size: 100%;
+
+
+}
+
+
+footer {
+    background-color:  #050449;
+    text-align: left;
+    
+        height: 100px; /* defina a altura do rodapé */
+        margin-top: 150px; /* defina a margem superior do rodapé */
+        margin-bottom: 50px; /* defina a margem inferior do rodapé */
+    
+      
+    background-size: 100%;
+    padding: 15px 50;
+    width: 100%;
+    
+
+}
+.rodape_logo{
+      
+    background-size: 150%;
+    margin: 0;
+    height: auto;
+    display: flex;
+    float: right;
+    position: relative;
+    right: -167px;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    margin: auto;
+    width: 130%;
+    padding: 0;
+    
+}
+
+@media(max-width:100%){
+    .telefone {
+        font-size:3rem;
+        
+    }
+}

@@ -1,0 +1,56 @@
+#cabecalho {
+    display:flex;
+    width:100%;
+    height: 100%;
+    justify-content:space-around;
+    align-items: baseline;
+    background-color: #050449;
+}
+
+.cabecalho__itens{
+    display:flex;
+    width:60%;
+    justify-content:space-between;
+    align-items: baseline;
+    background-color: #050449;
+}
+#texto_cabeçalho {
+    color: rgb(153, 14, 14);
+    position: relative;
+    line-height: 8.5em;
+    margin-left: -780px;
+    bottom: 60px;
+    left: 200px;
+    width: 100%;
+    font-weight: bold;
+    vertical-align: top;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 43px;
+    
+}
+
+.cabecalho__logo {
+   max-width: 85%;
+    margin: 0;
+    height: auto;
+    display: block;
+    margin: auto;
+    width: 85%;
+    padding: 0;
+}
+
+
+@media(max-width:768px) {
+    .cabecalho{
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+    }
+}
+
+.vendedor {
+    width: 60%;
+    display: flex;
+    justify-content:center;
+    margin-top: .5rem;
+}

@@ -1,0 +1,73 @@
+.mvv__centroTela{
+    display: flex;
+    width: 100%;
+    justify-content:center;
+    flex-wrap: wrap;
+}
+
+.mvv{
+    display:flex;
+    justify-content:space-between;
+    margin-top:.5rem;
+    width: 940px;
+}
+
+
+.mvv__pricinpal{
+    margin-right: 1.5rem;
+}
+
+.mvv__imagem{
+    width: 300px;
+    height: 250px;
+}
+
+.mvv__titulo {
+    color: rgb(153, 14, 14);
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 30px;; 
+    font-family: 'Roboto', sans-serif;
+}
+
+.mvv__texto{
+    color: rgb(219, 214, 214);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height:1.5rem;
+    text-align:justify;
+    margin-bottom: .5rem;
+}
+
+.map{
+    width: 100%;  
+}
+
+@media(max-width:768px){
+    .mvv__pricinpal{
+        margin-right: 0;
+    }
+
+    .mvv{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mvv__imagem{
+        display: flex;
+        width: 100%;
+        height: 100%;
+    }
+
+    .mvv__titulo {
+        margin:.5rem;
+    }
+
+    .mvv__texto{
+        margin:.5rem;
+        line-height:1.5rem;
+
+    }
+
+}
+ 
