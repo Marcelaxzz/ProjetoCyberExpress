@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<!--Esse é o esboço da parte do vendedor, claro que tem MUITA coisa pra arrumar, mas é só p vcs terem uma base pra começar
+fica faltando: colocar a imagem pra aparecer pra todos os pcs(é so colocar img/ e selecionar a logo em png, mas no meu pc não deu.
+fazer os ajustes das fontes, arrumar aquela tabela e ajustar os espaçamentos do menu etc, 
+podem se basear no do cliente, ou adicionar mais algo.)-->
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -6,16 +10,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Área do vendedor</title>
     <link rel="stylesheet" href="vendedor.css">
-    <head>
-        <style>
-            body {
-            background-color: #050449
-            }
-            </style>
-</head>
-<body>
-    <header id="cabecalho">
-        <img src="C:\Users\marce\OneDrive\Imagens\home vendedor.jpeg" alt="Logo Distribuidora Cyber Express Vendedor" class="cabecalhovendedor">
+    <div id="container">
+      <link rel="stylesheet" href="cabeçalhovendedor.css">
+      <header class="cabecalho" style="display: flex; align-items: center;"></header>
+          </div>
+          <header class="cabecalho" style="display: flex; align-items: center;">
+                <img src="C:\Users\marce\Desktop\Site PI\ProjetoCyberExpress\ProjetoCyberExpress\img\logoempresapng.png" alt="Logo Distribuidora Cyber Express Cliente" id="cabecalho__logo">
+              </div>
+              <div class="titulo" style="display: flex; flex-direction: column; align-items: flex-start;">
+                <h1>SEJA BEM VINDO VENDEDOR!</h1>
+                <br>
+                <br>
+                <p>Empresa comprometida em oferecer o melhor para você!</p>
+              </div>
+            </header>
+            <nav class="menu">
+              <ul style="display: flex; justify-content: center;"></ul>
+            <link rel="stylesheet" href="menuvendedor.css">
+              <ul>
+                <li><a href="#">Quem somos?</a></li>
+                <li><a href="#">Nossos Serviços</a>
+                  <ul>
+                    <li><a href="#">Entregas</a></li>
+                    <li><a href="#">Prazos</a></li>
+                    <li><a href="#">Valores</a></li>
+                  </ul>        
+                </li>
+                <li><a href="#">Siga-nos</a>
+                  <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Whatsapp</a>
+                      <ul>
+                        <li><a href="#">Instagram CyberExpress</a></li>
+                        <li><a href="#">Facebook CyberExpress</a></li>
+                        <li><a href="#">Whatsapp CyberExpress</a>
+                          <ul>
+                            <li><a href="#">Stuff</a></li>
+                            <li><a href="#">Things</a></li>
+                            <li><a href="#">Other Stuff</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="#">Feedbacks</a></li>
+                <li><a href="#">Saiba mais</a></li>
+                <li><a href="#">Dúvidas Frequentes</a></li>
+                <li><a href="#">Voltar</a></li>
+              </ul>
+            </nav>
+            
+      
+    </div>
         <p> SELECIONE OS ITENS ABAIXO PARA PROSSEGUIR:</p>
     <form>
         <p>Cliente:</p>
