@@ -5,7 +5,7 @@
     height: 50%;
     justify-content:space-around;
     align-items: baseline;
-    background-color: #050449;
+    background: linear-gradient(315deg,  #d7e1ec, #050449);;
 
 }
 div.titulo p{
@@ -23,7 +23,7 @@ div.titulo p{
     width:60%;
     justify-content:space-between;
     align-items: baseline;
-    background-color: #050449;
+    background: linear-gradient(315deg,  #d7e1ec, #050449);
 }
 
 #texto_cabeçalho {

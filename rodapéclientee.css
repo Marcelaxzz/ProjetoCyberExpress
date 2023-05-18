@@ -12,9 +12,10 @@ footer {
     position: relative;
     background: linear-gradient(315deg, #000000 , #050440);
     left: -275px;
-    width: 185%;
+    width: 150%;
+    margin-top: 1000px;
     margin: 0;
-    height: 500px; 
+    height: 900px; 
   }
   
 
@@ -22,7 +23,7 @@ footer {
 
 .container-footer{
     position: relative;
-    max-width: 1900px;
+    max-width: 1600px;
     padding: 0 4%;
     margin: auto;
 }

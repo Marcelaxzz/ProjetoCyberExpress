@@ -22,7 +22,7 @@
     position: relative;
     line-height: 8.5em;
     margin-left: -780px;
-    bottom: 60px;
+    bottom: 0px;
     left: 200px;
     width: 100%;
     font-weight: bold;
@@ -43,6 +43,7 @@
     margin-right: 200px;
     margin-bottom: 10px;
     padding: 0;
+    background-color: #050449;
 }
 
 
@@ -59,4 +60,5 @@
     display: flex;
     justify-content:center;
     margin-top: .5rem;
+    background-color: #050449;
 }

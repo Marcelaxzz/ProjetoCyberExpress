@@ -7,16 +7,16 @@ body {
 }
 
 /* Estilo para os cabeçalhos */
-h1 {
+#h1 {
   color: rgb(153, 14, 14);
   text-align: center;
   margin-top: 20px;
 }
 p, select, input[type="number"], input[type="checkbox"], label {
   display: inline-block;
+  vertical-align: middle;
   margin: auto;
   padding: 0;
-  vertical-align: middle;
   white-space: nowrap;
 }
 

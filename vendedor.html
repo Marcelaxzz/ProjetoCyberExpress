@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do Vendedor</title>
+    ]<link rel="stylesheet" href="cliente.css">
+    <link rel="stylesheet" href="rastreioteste.css">
+    <link rel="stylesheet" href="cabeçalhos.css">
+    <link rel="stylesheet" href="selects.css">
+</head>
+<body>
+    <script src="https://kit.fontawesome.com/bb49834cf4.js" crossorigin="anonymous"></script>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+</style>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<body>
+  <div class="nav-bar">
+    <ul class="links">
+      
+      <li><a id="navi" href="#">Quem somos?</a></li>
+      <li><a id="navi" href="#">Nossos Serviços</a></li>
+      <li><a id="navi" href="#">Feedbacks</a></li>
+      <li><a id="navi" href="#">Dúvidas Frequentes</a></li>
+      <li><a id="navi" href="#">Siga-nos</a></li>
+      <li><a id="navi" href="#">Alterar Meus Dados</a></li>
+      <li><a id="navi" href="#"><i class="material-icons">
+search
+        </i></a></li>
+      <li><a id="navi-cart" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+    </ul>
+  </div>
+     <main class="content">  
+        <div class="container1">
+          <div id="teste11pro"><h1 class="head1">SEJA BEM VINDO VENDEDOR!</h1>
+            <br>
+            <br>
+            <h3>Empresa comprometida em oferecer o melhor para você!</h3>
+          </div>
+          <img id="img11pro" src="img/logo (2).jpeg" alt="home">
+       </div>
+        <div class="container2">
+          <div class="teste11">
+            <h1 class="head2">Selecione as opções abaixo para prosseguir:</h1>
+
+<br/><br/><br><br/>
+
+<span class="custom-dropdown big">
+    <select>    
+        <p>Cliente</p>
+        <option>Bar do Zé</option>
+    <option>Bar do Dido</option>
+    <option>Bar do Presidente</option>
+    <option>Mercearia do Orival</option>
+    <option>Mercearia Quitanda Mineira</option>
+    <option>Mercearia do Baiano</option>
+    <option>Supermercado BH</option>
+    <option>Supermercado Pague Menos</option>
+    <option>Supermercado Zaffari</option>
+    </select>
+
+<span class="custom-dropdown">
+    <select>
+        <p>Produto:</p>
+    <option></option>
+    <option>Arroz</option>
+    <option>Feijão</option>
+    <option>Refrigerante</option>
+    <option>Desinfetante</option>
+    <option>Creme Dental</option>
+ 
+   
+
+    </select>
+</span>
+
+<span class="custom-dropdown big">
+    <select>
+        <option></option>
+        <p>Variação::</p>
+        <option></option>
+        <option>Arroz Colina 5Kg</option>
+    <option>Arroz Duarte 5Kg</option>
+    <option>Arroz Vasconcelos 5Kg</option>
+    <option>Feijão Kicaldo 1Kg</option>
+    <option>Feijão União 1Kg</option>
+    <option>Feijão Bom Prato 1Kg</option>
+    <option>Refrigerante Coca-Cola 2L</option>
+    <option>Refrigerante Fanta Maracujá 1,5L</option>
+    <option>Refrigerante Guaí Maçã 2L</option>
+    <option>Desinfetante Pinho Sol 500Ml</option>
+    <option>Desinfetante Casa KM 500Ml</option>
+    <option>Desinfetante Ypê 500Ml</option>
+    <option>Creme Dental Colgate 50g</option>
+    <option>Creme Dental Sorriso 50g</option>
+    <option>Creme Dental Tandy Kids 50g</option>
+    </select>
+</span>
+
+<br/>
+
+<span class="custom-dropdown big">
+    <select>
+        <p>Código do Produto:</p>
+        
+
+    </select>
+</span>
+
+<span class="custom-dropdown big">
+    <select>
+        <option>Teste</option>
+        <option>Teste</option>  
+        <option>Teste</option>
+        <option>Teste</option>
+        <option>Teste</option>
+    </select>
+</span>
+
+<span class="custom-dropdown big">
+    <select>
+        <option>Teste</option>
+        <option>Teste</option>  
+        <option>Teste</option>
+        <option>Teste</option>
+        <option>Teste</option>
+    </select>
+
+    <script>/* JS for demo only */
+        var colors = ['1abc9c', '2c3e50', '2980b9', '7f8c8d', 'f1c40f', 'd35400', '27ae60'];
+        
+        colors.each(function (color) {
+          $$('.color-picker')[0].insert(
+            '<div class="square" style="background: #' + color + '"></div>'
+          );
+        });
+        
+        $$('.color-picker')[0].on('click', '.square', function(event, square) {
+          background = square.getStyle('background');
+          $$('.custom-dropdown select').each(function (dropdown) {
+            dropdown.setStyle({'background' : background});
+          });
+        });
+        
+        /*
+         * Original version at
+         * http://red-team-design.com/making-html-dropdowns-not-suck
+         */ </script>
+</span>
