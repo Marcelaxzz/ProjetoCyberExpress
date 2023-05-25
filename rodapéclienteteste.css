@@ -11,10 +11,10 @@
 footer {
     position: relative;
     background: linear-gradient(315deg, #000000 , #050440);
-    left: -275px;
-    width: 185%;
+    left: -245px;
+    width: 139%;
     margin: 0;
-    height: 500px; 
+    height: 900px; 
   }
   
 
@@ -22,7 +22,9 @@ footer {
 
 .container-footer{
     position: relative;
+    margin-top: 155px;
     max-width: 1900px;
+    height: 8800px;
     padding: 0 4%;
     margin: auto;
 }
@@ -37,6 +39,7 @@ footer {
 }
 .footer-col h4{
     font-size: 22px;
+    margin-top: 522px;
     color: white;
     margin-bottom: 20px;
     font-weight: 500;
