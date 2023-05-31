@@ -4,7 +4,7 @@ body{
 	font-weight: 300;
 	line-height: 1.7;
 	color: #ffeba7;
-	background: linear-gradient(315deg, #d7e1ec , #050440);
+	background: linear-gradient(black, black, #050449);
 }
 a:hover {
 	text-decoration: none;
@@ -175,7 +175,7 @@ display: none;
   color: #000000;
 }
 .btn:hover{  
-  background-color: #050449;
+  background-color: black;
   color: #ffeba7;
   box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
 }
