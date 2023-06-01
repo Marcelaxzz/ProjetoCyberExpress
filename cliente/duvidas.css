@@ -21,7 +21,7 @@
     left: 50%;
     width: 60px;
     height: 2px;
-    background: #050440;
+ 
     bottom: -25px;
     margin-left: -30px;
 }
@@ -117,4 +117,8 @@
     line-height: 26px;
     margin-top: 10px;
   }
+.collapse.faqCollapse-7{
+  padding-bottom: 200px;
+  margin-bottom: 350px;
+}
 }
