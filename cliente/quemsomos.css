@@ -2,6 +2,7 @@
 
 body {
   font-family: "Raleway", sans-serif !important;
+  max-width: 100%;
 }
 
 ul {
@@ -60,6 +61,7 @@ p {
 
 .nav-screen {
   height: 100%;
+  max-width: 100%;
   z-index: 500;
   position: fixed;
   height: 1600px;
@@ -212,7 +214,8 @@ p {
   background-size: cover;
 }
 
-.aboutme p {
+.aboutme p { 
+  max-width: 100%;
   color: white;
   font-weight: 100;
   font-size: 17.4px;

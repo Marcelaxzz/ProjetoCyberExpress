@@ -7,9 +7,12 @@
 }
 
 .containerproje{
+
     position: relative;
     height: 700px;
-    background: black;
+    width: 140%;
+    left: -200px;
+    background: rgb(255, 255, 255);
 }
 .contentproje img{
     margin-bottom: 120px;
@@ -132,7 +135,7 @@
 }
 
 .containerproje #next{
-    right: 20px;
+    right: -95px;
 }
 
 
