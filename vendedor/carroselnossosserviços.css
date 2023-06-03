@@ -11,13 +11,13 @@
     position: relative;
     height: 700px;
     width: 140%;
-    left: -200px;
+    left: -270px;
     background: rgb(255, 255, 255);
 }
 .contentproje img{
     margin-bottom: 120px;
-    width: 80%;
-    height: 600px;
+    width: 90%;
+    height: 500px;
 }
 
 .containerproje .slide-container .slide{
@@ -135,7 +135,7 @@
 }
 
 .containerproje #next{
-    right: -95px;
+    right: -240px;
 }
 
 
