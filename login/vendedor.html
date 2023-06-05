@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do Vendedor</title>
+    ]<link rel="stylesheet" href="cliente.css">
+    <link rel="stylesheet" href="rastreioteste.css">
+    <link rel="stylesheet" href="cabeçalhos.css">
+    <link rel="stylesheet" href="selects.css">
+    <link rel="stylesheet" href="pedidosvendedor.css">
+    <link rel="stylesheet" href="addcarrinho.css">
+    <link rel="stylesheet" href="duvidas.css">
+    <link rel="stylesheet" href="searchduvidas.css">
+</head>
+<body>
+    <script src="https://kit.fontawesome.com/bb49834cf4.js" crossorigin="anonymous"></script>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+</style>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<body>
+  <div class="nav-bar">
+    <ul class="links">
+      
+      <li><a id="navi" href="quemsomos.html">Quem somos?</a></li>
+      <li><a id="navi" href="nossosserviços.html">Nossos Serviços</a></li>
+      <li><a id="navi" href="#">Feedbacks</a></li>
+      <li><a id="navi" href="duvidas.html">Dúvidas Frequentes</a></li>
+      <li><a id="navi" href="siga.html">Siga-nos</a></li>
+      <li><a id="navi" href="#">Alterar Meus Dados</a></li>
+      <li><a id="navi" href="#"><i class="material-icons">
+search
+        </i></a></li>
+      <li><a id="navi-cart" href="carrinhovendedor.html"><i class="fas fa-shopping-cart"></i></a></li>
+    </ul>
+  </div>
+     <main class="content">  
+        <div class="container1">
+          <div id="teste11pro"><h1 class="head1">SEJA BEM VINDO VENDEDOR!</h1>
+            <br>
+            <br>
+            <h3>Empresa comprometida em oferecer o melhor para você!</h3>
+          </div>
+          <img id="img11pro" src="img/logo (2).jpeg" alt="home">
+       </div>
+        <div class="container2">
+          <div class="teste11">
+            <h1 class="head2">Selecione as opções abaixo para prosseguir:</h1>
+
+<br/><br/><br><br/>
+
+<span class="custom-dropdown big">
+    <select>    
+        <p>Cliente</p>
+        <option>Bar do Zé</option>
+    <option>Bar do Dido</option>
+    <option>Bar do Presidente</option>
+    <option>Mercearia do Orival</option>
+    <option>Mercearia Quitanda Mineira</option>
+    <option>Mercearia do Baiano</option>
+    <option>Supermercado BH</option>
+    <option>Supermercado Pague Menos</option>
+    <option>Supermercado Zaffari</option>
+    </select>
+
+<span class="custom-dropdown">
+    <select>
+        <p>Produto:</p>
+    <option></option>
+    <option>Arroz</option>
+    <option>Feijão</option>
+    <option>Refrigerante</option>
+    <option>Desinfetante</option>
+    <option>Creme Dental</option>
+ 
+   
+
+    </select>
+</span>
+
+<span class="custom-dropdown big">
+    <select>
+        <option></option>
+        <p>Variação::</p>
+        <option></option>
+        <option>Arroz Colina 5Kg</option>
+    <option>Arroz Duarte 5Kg</option>
+    <option>Arroz Vasconcelos 5Kg</option>
+    <option>Feijão Kicaldo 1Kg</option>
+    <option>Feijão União 1Kg</option>
+    <option>Feijão Bom Prato 1Kg</option>
+    <option>Refrigerante Coca-Cola 2L</option>
+    <option>Refrigerante Fanta Maracujá 1,5L</option>
+    <option>Refrigerante Guaí Maçã 2L</option>
+    <option>Desinfetante Pinho Sol 500Ml</option>
+    <option>Desinfetante Casa KM 500Ml</option>
+    <option>Desinfetante Ypê 500Ml</option>
+    <option>Creme Dental Colgate 50g</option>
+    <option>Creme Dental Sorriso 50g</option>
+    <option>Creme Dental Tandy Kids 50g</option>
+    </select>
+</span>
+<div class="wrapper">
+  <button id="button-animated" class="submit-button">           
+    <div class="button-inner">
+      <span id="button-fade-text" class="button-text">
+        ADICIONAR AO CARRINHO
+      </span>
+      <div id="status-badge" class="status-badge">
+        <i id="submit-badge" class="badge fas fa-arrow-right"></i>
+        <i id="loading-badge" class="badge translucent fas fa-circle-notch"></i>
+        <i id="success-badge" class="badge translucent fas fa-check"></i>
+        <i id="failure-badge" class="badge translucent fas fa-times"></i>
+      </div>
+    </div>
+  </button>
+</div>
+<script>// -------------------------------------------------------------
+  const CHANGE_THIS_TO_FALSE_TO_SEE_FAILED_RESOLVED_STATUS = true;
+  // -------------------------------------------------------------
+  
+  window.onload = () => {
+    const button = document.getElementById('button-animated');
+    const buttonText = document.getElementById('button-fade-text');
+    const statusBadge = document.getElementById('status-badge');
+    const failureBadge = document.getElementById('failure-badge');
+    
+    const badges = document.querySelectorAll('.badge');
+    
+    const submitBadge = document.getElementById('submit-badge');
+    const loadingBadge = document.getElementById('loading-badge');
+    const successBadge = document.getElementById('success-badge');
+    
+    const spinBadges = () => {
+      Object.values(badges).forEach(b => b.classList.toggle('spin-badge'))
+    }
+    
+    const toggleExpandedStatusBadge = () => {
+      statusBadge.classList.toggle('status-badge-expanded')
+    }
+    
+    const toggleExpandedButton = () => {
+      button.classList.toggle('button-collapsed')
+      buttonText.classList.toggle('translucent')
+    }
+    
+    const resolved = successful => () => {
+      loadingBadge.classList.toggle('translucent')
+      if(successful) {
+        // change colors
+        button.classList.toggle('submit-button-success')
+        statusBadge.classList.toggle('status-badge-success')
+        
+        successBadge.classList.toggle('translucent')
+        
+        buttonText.innerText = 'Adicionado com sucesso!'
+      } else {
+        // change colors
+        button.classList.toggle('submit-button-failure')
+        statusBadge.classList.toggle('status-badge-failure')
+        
+        failureBadge.classList.toggle('translucent')
+        
+        buttonText.innerText = 'Failed :('
+      }
+      
+      spinBadges()
+      
+      setTimeout(() => {
+        toggleExpandedStatusBadge()
+        toggleExpandedButton()
+      }, 1000)
+    }
+    
+    button.onclick = function () {
+      button.classList.toggle('submit-button-unclickable')
+      
+      spinBadges()
+      
+      submitBadge.classList.toggle('translucent')
+      loadingBadge.classList.toggle('translucent')
+      
+      toggleExpandedButton()
+      toggleExpandedStatusBadge()
+      setTimeout(resolved(CHANGE_THIS_TO_FALSE_TO_SEE_FAILED_RESOLVED_STATUS), 3000);
+    }
+  }
+  </script>
+<div class="container" id="template_invoice">
+  <div class="row">
+    <div class="col-xs-4">
+      <div class="invoice-title">
+        <h2>Resumo do pedido</h2>
+      </div>
+    </div>
+    <div class="col-xs-4">
+      <p class="lead">Pedido #12345</p>
+    </div>
+    <div class="col-xs-4">
+      <button class="btn btn-info pull-right">Baixar Nota Fiscal</button>
+    </div>
+  </div>
+  <hr>
+ <div class="row">
+  <div class="col-xs-6">
+    <address>
+      <strong class="nomedest">Nome do destinatário:</strong>
+      Supermercados BH<br>
+      Filial de Patos de Minas<br>
+      Rua Major Gote, 2377<br>
+      Patos de Minas-MG
+    </address>
+  </div>
+  
+  </div>
+  <div class="row">
+    <div class="col-xs-6">
+      <address>
+    		<strong>Método de pagamento:</strong><br>
+    		Mastercard final: **** 4242<br>
+    		supermercadosbh@gmail.com
+    	</address>
+    </div>
+    <br> 
+    <div class="col-xs-6 text-right">
+      <address>
+    		<strong>Data do pedido:</strong><br>
+    		21 de Junho, 2023<br><br>
+    	</address>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+        </div>
+        <div class="panel-body">
+          <div class="table-responsive">
+            <table class="table table-condensed">
+              <thead>
+                <tr>
+                  <td><strong>Item</strong></td>
+                  <td class="text-center"><strong>Valor Unitário</strong></td>
+                  <td class="text-right"><strong>Código do Produto</strong></td>
+                  <td class="text-center"><strong>Quantidade</strong></td>
+                  <td class="text-right"><strong>Total</strong></td>
+                
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Arroz Colina 5kg</td>
+                  <td class="text-center">R$25,00</td>
+                  <td class="text-center">#55690</td>
+                  <td class="text-center">50</td>
+                  <td class="text-right">R$1250,00</td>
+                </tr>
+                <tr>
+                  <td>Refrigerante Coca-Cola 2L (fardo)</td>
+                  <td class="text-center">R$45,00</td>
+                  <td class="text-center">#95695</td>
+                  <td class="text-center">20</td>
+                  <td class="text-right">R$225,00</td>
+                </tr>
+                <tr>
+                  <td>Feijão Bom Prato 1kg (fardo)</td>
+                  <td class="text-center">R$9,90</td>
+                  <td class="text-center">#69290</td>
+                  <td class="text-center">45</td>
+                  <td class="text-right">R$445,50</td>
+                </tr>
+                <tr>
+                  <td class="thick-line"></td>
+                  <td class="thick-line"></td>
+                  <td class="thick-line text-center"><strong>Subtotal</strong></td>
+                  <td class="thick-line text-right">R$1970,00</td>
+                </tr>
+                <tr>
+                  <td class="no-line"></td>
+                  <td class="no-line"></td>
+                  <td class="no-line text-center"><strong>Taxa de Envio</strong></td>
+                  <td class="no-line text-right">R$12,00</td>
+                </tr>
+                <tr>
+                  <td class="no-line"></td>
+                  <td class="no-line"></td>
+                  <td class="no-line text-center"><strong>Total</strong></td>
+                  <td class="no-line text-right">R$1982,00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>$(document).ready(function() {
+  $(".btn").click(function() {
+    var doc = new jsPDF("p", "pt", "letter"),
+        source = $("#template_invoice")[0],
+        margins = {
+          top: 40,
+          bottom: 60,
+          left: 40,
+          width: 522
+        };
+    doc.fromHTML(
+      source, // HTML string or DOM elem ref.
+      margins.left, // x coord
+      margins.top,
+      {
+        // y coord
+        width: margins.width // max width of content on PDF
+      },
+      function(dispose) {
+        // dispose: object with X, Y of the last line add to the PDF
+        //          this allow the insertion of new lines after html
+        doc.save("Test.pdf");
+      },
+      margins
+    );
+  });
+});
+</script>
+
+
+
+    <script>/* JS for demo only */
+        var colors = ['1abc9c', '2c3e50', '2980b9', '7f8c8d', 'f1c40f', 'd35400', '27ae60'];
+        
+        colors.each(function (color) {
+          $$('.color-picker')[0].insert(
+            '<div class="square" style="background: #' + color + '"></div>'
+          );
+        });
+        
+        $$('.color-picker')[0].on('click', '.square', function(event, square) {
+          background = square.getStyle('background');
+          $$('.custom-dropdown select').each(function (dropdown) {
+            dropdown.setStyle({'background' : background});
+          });
+        });
+        
+        /*
+         * Original version at
+         * http://red-team-design.com/making-html-dropdowns-not-suck
+         */ </script>
+</span>

@@ -11,7 +11,7 @@
   </style>
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css"><!--icones--> 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"><!--alinhamentos-->
-<link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="main.css">
 </head>
 <body>
 	<div class="section">
@@ -29,41 +29,66 @@
 										<div class="section text-center">
 											<h4 class="mb-4 pb-3">Cliente</h4>
 											<div class="form-group">
-												<input type="text" class="form-style" placeholder="E-mail">
+												<input type="text" class="form-style" placeholder="E-mail" id="clienteEmail">
 												<i class="input-icon uil uil-user"></i>
 											</div>	
 											<div class="form-group mt-2">
-												<input type="password" class="form-style" placeholder="Senha">
+												<input type="password" class="form-style" placeholder="Senha" id="clienteSenha">
 												<i class="input-icon uil uil-lock-alt"></i>
 											</div>
 											<div>
-												<a href="cliente.html" class="btn mt-4">Entrar</a>
+												<button class="btn mt-4" onclick="loginCliente()">Entrar</button>
 											</div>
-                      <p class="mb-0 mt-4 text-center"><a href="index.html" class="link">Esqueceu sua senha?</a></p>
-				      					</div>
-			      					</div>
-			      				</div>
+											<p class="mb-0 mt-4 text-center"><a href="index.html" class="link">Esqueceu sua senha?</a></p>
+										</div>
+									</div>
+								</div>
 								<div class="card-back">
 									<div class="center-wrap">
 										<div class="section text-center">
 											<h4 class="mb-3 pb-3">Vendedor</h4>
 											<div class="form-group">
-												<input type="text" class="form-style" placeholder="Nome">
+												<input type="text" class="form-style" placeholder="Nome" id="vendedorNome">
 												<i class="input-icon uil uil-user"></i>
+											</div>
 											<div class="form-group mt-2">
-												<input type="password" class="form-style" placeholder="Senha">
+												<input type="password" class="form-style" placeholder="Senha" id="vendedorSenha">
 												<i class="input-icon uil uil-lock-alt"></i>
 											</div>
-											<a href="vendedor.html" class="btn mt-4">Entrar</a>
-				      					</div>
-			      					</div>
-			      				</div>
-			      			</div>
-			      		</div>
-			      	</div>
-		      	</div>
-	      	</div>
-	    </div>
+											<button class="btn mt-4" onclick="loginVendedor()">Entrar</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<script>
+						function loginCliente() {
+							var email = document.getElementById('clienteEmail').value;
+							var senha = document.getElementById('clienteSenha').value;
+
+							if (email === 'cliente@exemplo.com' && senha === 'senha123') {
+								window.location.href = 'cliente.html'; 
+							} else {
+								alert('Credenciais de cliente inválidas!'); 
+							}
+						}
+
+						function loginVendedor() {
+							var nome = document.getElementById('vendedorNome').value;
+							var senha = document.getElementById('vendedorSenha').value;
+
+							// Verifica se o nome e a senha são iguais aos esperados
+							if (nome === 'vendedor' && senha === 'senha123') {
+								window.location.href = 'vendedor.html'; 
+							} else {
+								alert('Credenciais de vendedor inválidas!'); 
+							}
+						}
+					</script>
+				</div>
+			</div>
+		</div>
 	</div>
 </body>
 </html>
