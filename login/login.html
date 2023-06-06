@@ -48,7 +48,7 @@
 										<div class="section text-center">
 											<h4 class="mb-3 pb-3">Vendedor</h4>
 											<div class="form-group">
-												<input type="text" class="form-style" placeholder="Nome" id="vendedorNome">
+												<input type="text" class="form-style" placeholder="E-mail" id="vendedorEmail">
 												<i class="input-icon uil uil-user"></i>
 											</div>
 											<div class="form-group mt-2">
@@ -75,11 +75,11 @@
 						}
 
 						function loginVendedor() {
-							var nome = document.getElementById('vendedorNome').value;
+							var email = document.getElementById('vendedorEmail').value;
 							var senha = document.getElementById('vendedorSenha').value;
 
 							// Verifica se o nome e a senha são iguais aos esperados
-							if (nome === 'vendedor' && senha === 'senha123') {
+							if (email === 'vendedor@exemplo.com' && senha === 'senha123') {
 								window.location.href = 'vendedor.html'; 
 							} else {
 								alert('Credenciais de vendedor inválidas!'); 

@@ -1,101 +1,96 @@
-
-  /* Estilos para a div container */
-  .container {
-    padding-top: 600px;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f2f2f2;
-    font-family: Arial, sans-serif;
-  }
-
-  /* Estilos para a div invoice-title */
-  .invoice-title h2 {
-    
-    font-size: 24px;
-    color: #333;
-  }
-
-  /* Estilos para a div row */
-  .row {
-    margin-bottom: 20px;
-  }
-
-  /* Estilos para as colunas col-xs-4 */
-  .col-xs-4 {
-    width: 33.33%;
-    float: left;
-  }
-
-  /* Estilos para o botão Download */
-  .btn-info {
-    background-color: #050449;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    animation: float 2s infinite;
-    border-radius: 4px;
-  }
-
-  /* Animação de flutuação */
-  @keyframes float {
-    0% {
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    }
-    50% {
-      box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
-    }
-    100% {
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    }
-  }
-
-
-
-
-
-
-
-
-
-  /* Estilos para a div address */
-  address {
-    font-style: normal;
-  }
-
-  /* Estilos para a tabela */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-.nomedest{
-    display: block;
-    font-weight: bold;
-    position: relative;
-    left: -255px;
+.container {
+  margin-top: -200px; /* Ajuste o valor conforme necessário */
+  max-width: 800px;
+  position: relative;
+  align-items: center;
+  right:-350px;
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
 }
-  /* Estilos para as células da tabela */
-  td {
-    padding: 8px;
-    border-bottom: 1px solid #ddd;
-  }
 
-  /* Estilos para a linha com borda mais espessa */
-  .thick-line {
-    border-bottom-width: 2px;
-  }
 
-  /* Estilos para as células sem borda */
-  .no-line {
-    border: none;
-  }
 
-  /* Estilos para o título do painel */
-  .panel-title {
-    font-size: 18px;
-    margin: 0;
+/* Estilos para a div invoice-title */
+.invoice-title h2 {
+  font-size: 24px;
+  color: #333;
+}
+
+/* Estilos para a div row */
+.row {
+  margin-bottom: 20px;
+}
+
+/* Estilos para as colunas col-xs-4 */
+.col-xs-4 {
+  width: 33.33%;
+  float: left;
+}
+
+/* Estilos para o botão Download */
+.btn-info {
+  background-color: #050449;
+  color: #fff;
+  margin-top: -500px;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  animation: float 2s infinite;
+  border-radius: 4px;
+}
+
+/* Animação de flutuação */
+@keyframes float {
+  0% {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   }
+  50% {
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+  }
+  100% {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Estilos para a div address */
+address {
+  font-style: normal;
+}
+
+/* Estilos para a tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.nomedest {
+  display: block;
+  font-weight: bold;
+  position: relative;
+  left: -255px;
+}
+
+/* Estilos para as células da tabela */
+td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Estilos para a linha com borda mais espessa */
+.thick-line {
+  border-bottom-width: 2px;
+}
+
+/* Estilos para as células sem borda */
+.no-line {
+  border: none;
+}
+
+/* Estilos para o título do painel */
+.panel-title {
+  font-size: 18px;
+  margin: 0;
+}

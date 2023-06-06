@@ -11,10 +11,11 @@
 footer {
     position: relative;
     background: linear-gradient(black, #050440);
-    width: 100%;
-    margin: 0;
-    padding-top: 35px;
-    height: 1500px; 
+    width: 130%;
+    margin-top: 230px;
+    left: -345px;
+    padding-top: 30px;
+    height: 570px;
   }
   
 
@@ -22,7 +23,7 @@ footer {
 
 .container-footer{
     position: relative;
-    height: 1500px;
+    height: 800px;
     padding-top: 30px;
     max-width: 1000px;
     padding: 0 4%;
@@ -36,16 +37,17 @@ footer {
 
 .footer-col{
     margin-top: 50px;
-    margin-bottom: 60px;
+    margin-bottom: 10px;
     margin-top: 50px;
     width: 25%;
     padding: 0 15px;
 }
 .footer-col h4{
+    padding-left: 250px;
     margin-top: 50px;
+    margin-bottom: 50px;
     font-size: 22px;
     color: white;
-       margin-bottom: 0px;
     font-weight: 500;
     position: relative;
     text-transform: uppercase;
@@ -58,16 +60,17 @@ footer {
 }
 .footer-col ul li a{
     font-size: 16px;
-    text-transform: capitalize;
+    padding-left: 300px;
+ 
     color: white;
-    text-decoration: none;
+    text-transform: none;
     font-weight: 300;
     display: block;
-    transition: all 0.3s ease;
+    
 }
 .footer-col ul li a:hover{
     color: #cecdcd;
-    padding-left: 10px;
+
 }
 .footer-col .medias-socias{
     margin-top: 30px;
@@ -84,11 +87,12 @@ footer {
 }
 .footer-col .form-sub input{
     width: 50%;
-    margin-top: 20px;
-    margin-bottom: 8px;
     padding: 10px;
     font-size: 15px;
+    margin-bottom: 10px;
     outline: none;
+    position: relative;
+    right: -200px;
     border: 1px solid white;
     color: white;
     background-color:  #050440;
@@ -100,6 +104,8 @@ footer {
     width: 50%;
     margin-top: 10px;
     padding: 10px; 
+    position: relative;
+    right: -200px;
     font-size: 17px;
     outline: none;
     border: none;

@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="addcarrinho.css">
     <link rel="stylesheet" href="duvidas.css">
     <link rel="stylesheet" href="searchduvidas.css">
+    <link rel="stylesheet" href="vendedorrodapé.css">
 </head>
 <body>
     <script src="https://kit.fontawesome.com/bb49834cf4.js" crossorigin="anonymous"></script>
@@ -52,57 +53,91 @@ search
 
 <br/><br/><br><br/>
 
-<span class="custom-dropdown big">
-    <select>    
-        <p>Cliente</p>
-        <option>Bar do Zé</option>
-    <option>Bar do Dido</option>
-    <option>Bar do Presidente</option>
-    <option>Mercearia do Orival</option>
-    <option>Mercearia Quitanda Mineira</option>
-    <option>Mercearia do Baiano</option>
-    <option>Supermercado BH</option>
-    <option>Supermercado Pague Menos</option>
-    <option>Supermercado Zaffari</option>
-    </select>
+<div class="select-container">
+  <label for="cliente">Cliente:</label>
+  <select id="cliente" onchange="updateProduto()">
+    <option value="">Selecione</option>
+    <option value="Bar do Zé">Bar do Zé</option>
+    <option value="Bar do Dido">Bar do Dido</option>
+    <option value="Bar do Presidente">Bar do Presidente</option>
+    <option value="Mercearia do Orival">Mercearia do Orival</option>
+    <option value="Mercearia Quitanda Mineira">Mercearia Quitanda Mineira</option>
+    <option value="Mercearia do Baiano">Mercearia do Baiano</option>
+    <option value="Supermercado BH">Supermercado BH</option>
+    <option value="Supermercado Pague Menos">Supermercado Pague Menos</option>
+    <option value="Supermercado Zaffari">Supermercado Zaffari</option>
+  </select>
+</div>
 
-<span class="custom-dropdown">
-    <select>
-        <p>Produto:</p>
-    <option></option>
-    <option>Arroz</option>
-    <option>Feijão</option>
-    <option>Refrigerante</option>
-    <option>Desinfetante</option>
-    <option>Creme Dental</option>
- 
-   
+<div class="select-container">
+  <label for="produto">Produto:</label>
+  <select id="produto" onchange="updateVariacao()">
+    <option value="">Selecione</option>
+  </select>
+</div>
 
-    </select>
-</span>
+<div class="select-container big">
+  <label for="variacao">Variação:</label>
+  <select id="variacao">
+    <option value="">Selecione</option>
+  </select>
+</div>
 
-<span class="custom-dropdown big">
-    <select>
-        <option></option>
-        <p>Variação::</p>
-        <option></option>
-        <option>Arroz Colina 5Kg</option>
-    <option>Arroz Duarte 5Kg</option>
-    <option>Arroz Vasconcelos 5Kg</option>
-    <option>Feijão Kicaldo 1Kg</option>
-    <option>Feijão União 1Kg</option>
-    <option>Feijão Bom Prato 1Kg</option>
-    <option>Refrigerante Coca-Cola 2L</option>
-    <option>Refrigerante Fanta Maracujá 1,5L</option>
-    <option>Refrigerante Guaí Maçã 2L</option>
-    <option>Desinfetante Pinho Sol 500Ml</option>
-    <option>Desinfetante Casa KM 500Ml</option>
-    <option>Desinfetante Ypê 500Ml</option>
-    <option>Creme Dental Colgate 50g</option>
-    <option>Creme Dental Sorriso 50g</option>
-    <option>Creme Dental Tandy Kids 50g</option>
-    </select>
-</span>
+<script>
+  var produtos = {
+    'Arroz': ['Arroz Colina 5Kg', 'Arroz Duarte 5Kg', 'Arroz Vasconcelos 5Kg', 'Arroz Tio João 1Kg'],
+    'Feijão': ['Feijão Kicaldo 1Kg', 'Feijão União 1Kg', 'Feijão Bom Prato 1Kg', 'Feijão Carioca 500g'],
+    'Refrigerante': ['Refrigerante Coca-Cola 2L', 'Refrigerante Fanta Maracujá 1,5L', 'Refrigerante Guaí Maçã 2L', 'Refrigerante Sprite 2L'],
+    'Desinfetante': ['Desinfetante Pinho Sol 500Ml', 'Desinfetante Casa KM 500Ml', 'Desinfetante Ypê 500Ml', 'Desinfetante Veja 500Ml'],
+    'Creme Dental': ['Creme Dental Colgate 50g', 'Creme Dental Sorriso 50g', 'Creme Dental Tandy Kids 50g', 'Creme Dental Close-Up 50g'],
+    'Açúcar': ['Açúcar União 1Kg', 'Açúcar Guarani 1Kg', 'Açúcar Cristal 2Kg'],
+    'Café': ['Café Pilão 500g', 'Café Melitta 250g', 'Café 3 Corações 1Kg'],
+    'Óleo': ['Óleo de Soja Liza 900ml', 'Óleo de Girassol Primor 1L', 'Óleo de Milho Sabor 900ml'],
+    'Sabonete': ['Sabonete Dove 90g', 'Sabonete Lux Suave 85g', 'Sabonete Phebo 100g']
+  };
+
+  function updateProduto() {
+    var clienteSelect = document.getElementById("cliente");
+    var produtoSelect = document.getElementById("produto");
+    var variacaoSelect = document.getElementById("variacao");
+
+    // Limpar o select de produtos
+    produtoSelect.innerHTML = "<option value=''>Selecione</option>";
+    variacaoSelect.innerHTML = "<option value=''>Selecione</option>";
+
+    // Obter o cliente selecionado
+    var selectedCliente = clienteSelect.value;
+
+    // Verificar o cliente selecionado e atualizar o select de produtos
+    if (selectedCliente !== "") {
+      for (var produto in produtos) {
+        produtoSelect.innerHTML += "<option value='" + produto + "'>" + produto + "</option>";
+      }
+    }
+
+    updateVariacao();
+  }
+
+  function updateVariacao() {
+    var produtoSelect = document.getElementById("produto");
+    var variacaoSelect = document.getElementById("variacao");
+
+    // Limpar o select de variações
+    variacaoSelect.innerHTML = "<option value=''>Selecione</option>";
+
+    // Obter o produto selecionado
+    var selectedProduto = produtoSelect.value;
+
+    // Verificar o produto selecionado e atualizar o select de variações
+    if (selectedProduto !== "") {
+      var variacoes = produtos[selectedProduto];
+      for (var i = 0; i < variacoes.length; i++) {
+        var variacao = variacoes[i];
+        variacaoSelect.innerHTML += "<option value='" + variacao + "'>" + variacao + "</option>";
+      }
+    }
+  }
+</script>
 <div class="wrapper">
   <button id="button-animated" class="submit-button">           
     <div class="button-inner">
@@ -189,6 +224,7 @@ search
     }
   }
   </script>
+
 <div class="container" id="template_invoice">
   <div class="row">
     <div class="col-xs-4">
@@ -310,16 +346,15 @@ search
           width: 522
         };
     doc.fromHTML(
-      source, // HTML string or DOM elem ref.
-      margins.left, // x coord
+      source, 
+      margins.left, 
       margins.top,
       {
-        // y coord
-        width: margins.width // max width of content on PDF
+        
+        width: margins.width 
       },
       function(dispose) {
-        // dispose: object with X, Y of the last line add to the PDF
-        //          this allow the insertion of new lines after html
+        
         doc.save("Test.pdf");
       },
       margins
@@ -350,4 +385,26 @@ search
          * Original version at
          * http://red-team-design.com/making-html-dropdowns-not-suck
          */ </script>
+         <footer>
+
+               
+          <div class="footer-col">
+              <h4>FALE COM ALGUM DE NOSSOS ATENDENTES:</h4>
+              <ul>
+                  <li><a href="#">34-56989</a></li>
+                  <li><a href="#">34-36529</a></li>
+                  <li><a href="#">34-96523</a></li>
+                  <li><a href="#">34-85269</a></li>
+              </ul>
+          </div>
+          
+          <div class="footer-col">
+              <h4>Inscreva-se para ser notificado sobre seu pedido por e-mail!</h4>
+              <div class="form-sub">
+                  <form>
+                      <input type="email" placeholder="Digite o seu e-mail" required>
+                      <button>Inscrever-se</button>
+                  </form>
+              </div>
+            </footer>
 </span>

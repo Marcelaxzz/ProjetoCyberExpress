@@ -1,8 +1,10 @@
-body {
+
+  body {
     margin: 0;
   }
   
   .wrapper {
+    margin-top: -300px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,9 +18,9 @@ body {
     bottom: 0;
     
     height: 50px;
+    padding-top: 0px;
     width: 350px;
     
-    padding: 0;
     
     border: 0px;
     border-radius: 50px;
@@ -104,7 +106,7 @@ body {
     opacity: 1;
   }
   
-  /* --- Animations --- */
+ 
   
   @keyframes spin {
     0% {
@@ -120,7 +122,7 @@ body {
   }
   
   .button-collapsed {
-  /*   animation: collapse-button .3s ease-in forwards; */
+  
     width: 50px;
   }
   
