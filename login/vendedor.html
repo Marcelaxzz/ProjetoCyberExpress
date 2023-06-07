@@ -185,7 +185,7 @@ search
     const resolved = successful => () => {
       loadingBadge.classList.toggle('translucent')
       if(successful) {
-        // change colors
+        
         button.classList.toggle('submit-button-success')
         statusBadge.classList.toggle('status-badge-success')
         
@@ -193,7 +193,7 @@ search
         
         buttonText.innerText = 'Adicionado com sucesso!'
       } else {
-        // change colors
+  
         button.classList.toggle('submit-button-failure')
         statusBadge.classList.toggle('status-badge-failure')
         
