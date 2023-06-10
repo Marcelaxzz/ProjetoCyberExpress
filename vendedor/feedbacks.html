@@ -6,125 +6,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedbacks</title>
     <link rel="stylesheet" href="feedbacks.css">
-</head>
-<body><div class="main">
-    <h1 style=font-weight:bold;>O que dizem nossos clientes?</h1>
-    <style>
-      .cards_item {
-            opacity: 0;
-            transform: translateY(20px);
-            filter: blur(4px);
-        }
-
-        .animate {
-            animation: animateCard 1s ease-in-out forwards;
-        }
-
-        @keyframes animateCard {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-                filter: blur(4px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-                filter: blur(0);
-            }
-        }
-    </style>
-    <!---imagens ainda vão ser trocadas.-->
-    <ul class="cards">
-      <li class="cards_item">
-        <div class="card">
-          <div class="card_image"><img src="img/logo.jpg.png"></div>
-          <div class="card_content">
-            <h2 class="card_title">Feedback 1</h2>
-            <p class="card_text"></p>
-   
+      <title>Responsive testimonials section using only HTML & CSS</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+    </head>
+    <body>
+      <div class="testimonials">
+        <div class="testimonial-inner">
+          <h1>Feedbacks</h1>
+          <div class="border"></div>
+          
+          <div class="row">
+            <div class="col">
+              <div class="testimonial">
+                <img src="img/logo.jpg.png" alt="">
+                <div class="name">Tom</div>
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <p>A CyberExpress é uma empresa ágil, atenciosa com os clientes, entregando qualidade e compromisso em seus serviços.</p>
+              </div>
+            </div>
+            
+            <div class="col">
+              <div class="testimonial">
+                <img src="img/logo.jpg.png" alt="">
+                <div class="name">Helena</div>
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <p>Maior agilidade do mercado! Produtos com preços justos, ótimo atendimento ao cliente, com certeza recomendo para todos.</p>
+              </div>
+            </div>
+            
+            <div class="col">
+              <div class="testimonial">
+                <img src="img/logo.jpg.png" alt="">
+                <div class="name">João</div>
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <p>CyberExpress para mim, a melhor distribuidora da região! Com os melhores preços e qualidade de serviço sem igual. Sem dúvidas recomendo!</p>
+              </div>
+            </div>
           </div>
         </div>
-      </li>
-      <li class="cards_item">
-        <div class="card">
-          <div class="card_image"><img src="img/logo.jpg.png"></div>
-          <div class="card_content">
-            <h2 class="card_title">Feedback 2</h2>
-            <p class="card_text"></p>
-         
-          </div>
-        </div>
-      </li>
-      <li class="cards_item">
-        <div class="card">
-          <div class="card_image"><img src="img/logo.jpg.png"></div>
-          <div class="card_content">
-            <h2 class="card_title">Feedback 3</h2>
-            <p class="card_text"></p>
-      
-          </div>
-        </div>
-      </li>
-      <li class="cards_item">
-        <div class="card">
-          <div class="card_image"><img src="img/logo.jpg.png"></div>
-          <div class="card_content">
-            <h2 class="card_title">Feedback 4</h2>
-            <p class="card_text"></p>
-      
-          </div>
-        </div>
-      </li>
-      <li class="cards_item">
-        <div class="card">
-          <div class="card_image"><img src="img/logo.jpg.png"></div>
-          <div class="card_content">
-            <h2 class="card_title">Feedback 5</h2>
-            <p class="card_text"></p>
-
-          </div>
-        </div>
-      </li>
-      <li class="cards_item">
-        <div class="card">
-          <div class="card_image"><img src="img/logo.jpg.png"></div>
-          <div class="card_content">
-            <h2 class="card_title">Feedback 6</h2>
-            <p class="card_text"></p>
-         
-          </div>
-        </div>
-      </li>
-    </ul>
-  </div>
-  
-  <h3 class="made_by">CyberExpress Distribuidora</h3>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var cards = document.querySelectorAll(".cards_item");
-
-        function animateCards() {
-            for (var i = 0; i < cards.length; i++) {
-                if (isElementInViewport(cards[i])) {
-                    cards[i].classList.add("animate");
-                }
-            }
-        }
-
-        function isElementInViewport(element) {
-            var rect = element.getBoundingClientRect();
-            return (
-                rect.top >= 0 &&
-                rect.left >= 0 &&
-                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-            );
-        }
-
-        animateCards(); // Anima os cards quando a página é carregada
-        window.addEventListener("scroll", animateCards);
-    });
-</script>
+      </div>
+      <div class="testimonials">
+        <div class="testimonial-inner">
+          <div class="border"></div>
+          
+          <div class="row">
+            <div class="col">
+              <div class="testimonial">
+                <img src="img/logo.jpg.png" alt="">
+                <div class="name">Tom</div>
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <p>A CyberExpress é uma empresa ágil, atenciosa com os clientes, entregando qualidade e compromisso em seus serviços.</p>
+              </div>
+            </div>
+            
+            <div class="col">
+              <div class="testimonial">
+                <img src="img/logo.jpg.png" alt="">
+                <div class="name">Helena</div>
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <p>Maior agilidade do mercado! Produtos com preços justos, ótimo atendimento ao cliente, com certeza recomendo para todos.</p>
+              </div>
+            </div>
+            
+            <div class="col">
+              <div class="testimonial">
+                <img src="img/logo.jpg.png" alt="">
+                <div class="name">João</div>
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <p>CyberExpress para mim, a melhor distribuidora da região! Com os melhores preços e qualidade de serviço sem igual. Sem dúvidas recomendo!</p>
+              </div>
+            </div>
+    </body>
+    </html>
 </body>
-
 </html>
+

@@ -28,12 +28,12 @@
       
       <li><a id="navi" href="quemsomos.html">Quem somos?</a></li>
       <li><a id="navi" href="nossosserviços.html">Nossos Serviços</a></li>
-      <li><a id="navi" href="#">Feedbacks</a></li>
+      <li><a id="navi" href="feedbacks.html">Feedbacks</a></li>
       <li><a id="navi" href="duvidas.html">Dúvidas Frequentes</a></li>
       <li><a id="navi" href="siga.html">Siga-nos</a></li>
-      <li><a id="navi" href="#">Alterar Meus Dados</a></li>
+      <li><a id="navi" href="alterardados.html">Alterar Meus Dados</a></li>
       <li><a id="navi" href="#"><i class="material-icons">
-search
+pesquisar
         </i></a></li>
       <li><a id="navi-cart" href="carrinhovendedor.html"><i class="fas fa-shopping-cart"></i></a></li>
     </ul>
@@ -185,7 +185,7 @@ search
     const resolved = successful => () => {
       loadingBadge.classList.toggle('translucent')
       if(successful) {
-        
+        // change colors
         button.classList.toggle('submit-button-success')
         statusBadge.classList.toggle('status-badge-success')
         
@@ -193,7 +193,7 @@ search
         
         buttonText.innerText = 'Adicionado com sucesso!'
       } else {
-  
+        // change colors
         button.classList.toggle('submit-button-failure')
         statusBadge.classList.toggle('status-badge-failure')
         
@@ -365,7 +365,7 @@ search
 
 
 
-    <script>/* JS for demo only */
+    <script>
         var colors = ['1abc9c', '2c3e50', '2980b9', '7f8c8d', 'f1c40f', 'd35400', '27ae60'];
         
         colors.each(function (color) {
@@ -381,10 +381,8 @@ search
           });
         });
         
-        /*
-         * Original version at
-         * http://red-team-design.com/making-html-dropdowns-not-suck
-         */ </script>
+       
+         </script>
          <footer>
 
                
