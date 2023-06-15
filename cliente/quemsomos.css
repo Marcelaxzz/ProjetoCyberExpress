@@ -294,9 +294,7 @@ p {
   animation: bounce 2s infinite;
 }
 
-/* about section */
 
-/* Skill bars */
 
 .container-skillbar {
   width: 100%;
@@ -454,7 +452,7 @@ p {
   animation-name: shake;
 }
 
-/* input field styles */
+
 
 .contact-form {
   padding: 0px 15px 0px 15px;
