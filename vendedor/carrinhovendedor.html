@@ -153,7 +153,7 @@
           quantidadeValue.textContent = quantidade + 1;
         });
 
-        precoCell.Content= "25,00"; // preço do produto 
+        precoCell.Content= "15,00"; // preço do produto 
 
         removeButton.textContent = "Remover";
         removeButton.className = "remove-button";
@@ -218,12 +218,7 @@
 
       alert("Item adicionado ao carrinho com sucesso!");
     }
-     // Limpar carrinho ao sair da página
-     window.addEventListener("pageshow", function(event) {
-      if (event.persisted) {
-        localStorage.removeItem("carrinho");
-      }
-    });
+
   </script>
 </body>
 

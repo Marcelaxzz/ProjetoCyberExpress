@@ -1,6 +1,4 @@
 
- 
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 *{
     margin: 0;
@@ -11,9 +9,9 @@
 footer {
     position: relative;
     background: linear-gradient(black, #050440);
-    width: 100%;
+    width: 120%;
+    left:-196px;
     margin-top: 0px;
-    left: 0px;
     padding-top: 30px;
     height: 670px;
   }
@@ -23,6 +21,7 @@ footer {
 
 .container-footer{
     position: relative;
+    right: 500px;
     height: 570px;
     padding-top: 30px;
     max-width: 100px;
