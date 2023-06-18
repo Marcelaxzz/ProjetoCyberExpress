@@ -1,229 +1,225 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrinho Vendedor</title>
-    <link rel="stylesheet" href="carrinhovendedor.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="carrinho.css">
+  <title>Carrinho do Vendedor</title>
 </head>
+
 <body>
-    <header id="site-header">
-		<div class="container">
-			<h1>Carrinho do Vendedor</h1>
-		</div>
-	</header>
+  <style>
+    /* Estilo para o cabeçalho */
+    h1 {
+      text-align: center;
+      font-size: 40px;
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 20px 0;
+    }
 
-	<div class="container">
+    /* Estilo para a tabela do carrinho */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
 
-		<section id="cart"> 
-			<article class="product">
-				<header>
-					<a class="remove">
-						<img src="img/arroz.jpg" alt="">
+    th,
+    td {
+      padding: 10px;
+      text-align: center;
+      border-bottom: 1px solid #e1e1e6;
+    }
 
-						<h3>Remover Produto</h3>
-					</a>
-				</header>
+    th {
+      background-color: #f2f2f2;
+    }
 
-				<div class="content">
+    /* Estilo para a linha do carrinho vazio */
+    tr.empty-row td {
+      text-align: center;
+      font-style: italic;
+      color: #888;
+    }
 
-					<h1>Arroz Camil</h1>
+    /* Estilo para o botão de adicionar ao carrinho */
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
 
-                    Arroz Camil-5KG unitário e atacado.
+    .button:hover {
+      background-color: #45a049;
+    }
 
-					<div title="ficha do produto" style="top: 0" class="yellow"></div>
-					<div style="top: 43px" class="type small">5kg</div>
-				</div>
+    /* Estilo para os botões de quantidade */
+    .quantity-button {
+      padding: 5px 10px;
+      background-color: #e1e1e6;
+      color: #333;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
 
-				<footer class="content">
-					<span class="qt-minus">-</span>
-					<span class="qt">2</span>
-					<span class="qt-plus">+</span>
+    .quantity-button:hover {
+      background-color: #ccc;
+    }
 
-					<h2 class="full-price">
-						R$25,00
-					</h2>
+    .quantity-value {
+      margin: 0 10px;
+      font-weight: bold;
+      font-size: 16px;
+    }
 
-					<h2 class="price">
-				
-					</h2>
-				</footer>
-			</article>
+    /* Estilo para o botão de remover */
+    .remove-button {
+      padding: 5px 10px;
+      background-color: #f44336;
+      color: white;
+      position: relative;
+      right: -45px;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
 
-			<article class="product">
-				<header>
-					<a class="remove">
-						<img src="img/feijão.jpg">
+    .remove-button:hover {
+      background-color: #d32f2f;
+    }
+  </style>
+  <h1>Carrinho do Vendedor</h1>
 
-						<h3>Remover produto</h3>
-					</a>
-				</header>
+  <table id="cart-items">
+    <tr>
+      <th>Cliente</th>
+      <th>Produto</th>
+      <th>Variação</th>
+      <th>Quantidade</th>
+      <th>Preço Unitário</th>
+      <th>Remover</th>
+    </tr>
+  </table>
 
-				<div class="content">
+  <script>
+    var carrinho = localStorage.getItem("carrinho");
+    var cartItems = document.getElementById("cart-items");
 
-					<h1>Feijão Kicaldo</h1>
-                    Feijão Kicaldo-1 kg unitário e atacado.
-					<div title="ficha do produto" style="top: 0" class="red></div>
-					<div title="ficha do produto"  style="top: 43px" class="type small">1kg</div>
-				</div>
+    if (carrinho) {
+      carrinho = JSON.parse(carrinho);
 
-				<footer class="content">
-					
-					<span class="qt-minus">-</span>
-					<span class="qt">1</span>
-					<span class="qt-plus">+</span>
+      // Renderiza cada item do carrinho na tabela
+      carrinho.forEach(function (produto, index) {
+        var row = document.createElement("tr");
+        var clienteCell = document.createElement("td");
+        var produtoCell = document.createElement("td");
+        var variacaoCell = document.createElement("td");
+        var quantidadeCell = document.createElement("td");
+        var quantidadeValue = document.createElement("span");
+        var quantidadeDecreaseButton = document.createElement("button");
+        var quantidadeIncreaseButton = document.createElement("button");
+        var precoCell = document.createElement("td");
+        var removeButton = document.createElement("button");
 
-					<h2 class="full-price">
-						R$9,90
-					</h2>
+        clienteCell.textContent = produto.cliente;
+        produtoCell.textContent = produto.produto;
+        variacaoCell.textContent = produto.variacao;
+        quantidadeValue.textContent = 1;
 
-					<h2 class="price">
-						
-					</h2>
-				</footer>
-			</article>
-
-			<article class="product">
-				<header>
-					<a class="remove">
-						<img src="img/coca.jpg" alt="produto carrinho">
-
-						<h3>Remover produto</h3>
-					</a>
-				</header>
-
-				<div class="content">
-
-					<h1>Refrigerante Coca-Cola</h1>
-
-					Refrigerante Coca-Cola-2L unitário e atacado.
-
-					<div title="" style="top: 0" class=" blue"></div>
-					<div style="top: 43px" class="type small">2L</div>
-				</div>
-
-				<footer class="content">
-					
-					<span class="qt-minus">-</span>
-					<span class="qt">3</span>
-					<span class="qt-plus">+</span>
-
-					<h2 class="full-price">
-						R$8,73
-					</h2>
-
-					<h2 class="price">
-						
-					</h2>
-				</footer>
-			</article>
-
-		</section>
-
-	</div>
-
-	<footer id="site-footer">
-		<div class="container clearfix">
-
-			<div class="left">
-				<h2 class="subtotal">Subtotal: <span>R$1970,00</span></h2>
-				<h3 class="tax">Entrega <span>R$12,00</span></h3>
-			</div>
-
-			<div class="right">
-				<h1 class="total">Total: <span>R$1982,00</span></h1>
-				<a class="btn">Finalizar Pedido</a>
-			</div>
-
-		</div>
-	</footer>
-    <script>
-	var check = false;
-
-        function changeVal(el) {
-          var qt = parseFloat(el.parent().children(".qt").html());
-          var price = parseFloat(el.parent().children(".price").html());
-          var eq = Math.round(price * qt * 100) / 100;
-          
-          el.parent().children(".full-price").html( eq + "€" );
-          
-          changeTotal();			
-        }
-        
-        function changeTotal() {
-          
-          var price = 0;
-          
-          $(".full-price").each(function(index){
-            price += parseFloat($(".full-price").eq(index).html());
-          });
-          
-          price = Math.round(price * 100) / 100;
-          var tax = Math.round(price * 0.05 * 100) / 100
-          var shipping = parseFloat($(".shipping span").html());
-          var fullPrice = Math.round((price + tax + shipping) *100) / 100;
-          
-          if(price == 0) {
-            fullPrice = 0;
+        quantidadeDecreaseButton.textContent = "-";
+        quantidadeDecreaseButton.className = "quantity-button";
+        quantidadeDecreaseButton.addEventListener("click", function () {
+          var quantidade = parseInt(quantidadeValue.textContent);
+          if (quantidade > 1) {
+            quantidadeValue.textContent = quantidade - 1;
           }
-          
-          $(".subtotal span").html(price);
-          $(".tax span").html(tax);
-          $(".total span").html(fullPrice);
-        }
-        
-        $(document).ready(function(){
-          
-          $(".remove").click(function(){
-            var el = $(this);
-            el.parent().parent().addClass("removed");
-            window.setTimeout(
-              function(){
-                el.parent().parent().slideUp('fast', function() { 
-                  el.parent().parent().remove(); 
-                  if($(".product").length == 0) {
-                    if(check) {
-                      $("#cart").html("<h1>The shop does not function, yet!</h1><p>If you liked my shopping cart, please take a second and heart this Pen on <a href='https://codepen.io/ziga-miklic/pen/xhpob'>CodePen</a>. Thank you!</p>");
-                    } else {
-                      $("#cart").html("<h1>No products!</h1>");
-                    }
-                  }
-                  changeTotal(); 
-                });
-              }, 200);
-          });
-          
-          $(".qt-plus").click(function(){
-            $(this).parent().children(".qt").html(parseInt($(this).parent().children(".qt").html()) + 1);
-            
-            $(this).parent().children(".full-price").addClass("added");
-            
-            var el = $(this);
-            window.setTimeout(function(){el.parent().children(".full-price").removeClass("added"); changeVal(el);}, 150);
-          });
-          
-          $(".qt-minus").click(function(){
-            
-            child = $(this).parent().children(".qt");
-            
-            if(parseInt(child.html()) > 1) {
-              child.html(parseInt(child.html()) - 1);
-            }
-            
-            $(this).parent().children(".full-price").addClass("minused");
-            
-            var el = $(this);
-            window.setTimeout(function(){el.parent().children(".full-price").removeClass("minused"); changeVal(el);}, 150);
-          });
-          
-          window.setTimeout(function(){$(".is-open").removeClass("is-open")}, 1200);
-          
-          $(".btn").click(function(){
-            check = true;
-            $(".remove").click();
-          });
         });
-		</script>
+
+        quantidadeIncreaseButton.textContent = "+";
+        quantidadeIncreaseButton.className = "quantity-button";
+        quantidadeIncreaseButton.addEventListener("click", function () {
+          var quantidade = parseInt(quantidadeValue.textContent);
+          quantidadeValue.textContent = quantidade + 1;
+        });
+
+        precoCell.Content= "15,00"; // preço do produto 
+
+        removeButton.textContent = "Remover";
+        removeButton.className = "remove-button";
+        removeButton.addEventListener("click", function () {
+          carrinho.splice(index, 1);
+          localStorage.setItem("carrinho", JSON.stringify(carrinho));
+          row.remove();
+        });
+
+        quantidadeCell.appendChild(quantidadeDecreaseButton);
+        quantidadeCell.appendChild(quantidadeValue);
+        quantidadeCell.appendChild(quantidadeIncreaseButton);
+
+        row.appendChild(clienteCell);
+        row.appendChild(produtoCell);
+        row.appendChild(variacaoCell);
+        row.appendChild(quantidadeCell);
+        row.appendChild(precoCell);
+        row.appendChild(removeButton);
+        cartItems.appendChild(row);
+      });
+    } else {
+      // Caso não haja itens no carrinho, exibe uma mensagem
+      var emptyRow = document.createElement("tr");
+      var emptyCell = document.createElement("td");
+      emptyCell.setAttribute("colspan", "6");
+      emptyCell.textContent = "O carrinho está vazio";
+      emptyRow.appendChild(emptyCell);
+      cartItems.appendChild(emptyRow);
+    }
+
+    function adicionarAoCarrinho() {
+      var clienteSelect = document.getElementById("cliente");
+      var produtoSelect = document.getElementById("produto");
+      var variacaoSelect = document.getElementById("variacao");
+
+      var cliente = clienteSelect.value;
+      var produto = produtoSelect.value;
+      var variacao = variacaoSelect.value;
+
+      if (cliente === "" || produto === "" || variacao === "") {
+        alert("Por favor, selecione todas as opções antes de adicionar ao carrinho.");
+        return;
+      }
+
+      var item = {
+        cliente: cliente,
+        produto: produto,
+        variacao: variacao
+      };
+
+      var carrinho = localStorage.getItem("carrinho");
+
+      if (carrinho) {
+        carrinho = JSON.parse(carrinho);
+      } else {
+        carrinho = [];
+      }
+
+      carrinho.push(item);
+      localStorage.setItem("carrinho", JSON.stringify(carrinho));
+
+      alert("Item adicionado ao carrinho com sucesso!");
+    }
+
+  </script>
 </body>
+
 </html>

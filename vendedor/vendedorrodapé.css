@@ -11,11 +11,11 @@
 footer {
     position: relative;
     background: linear-gradient(black, #050440);
-    width: 130%;
-    margin-top: 230px;
-    left: -345px;
+    width: 100%;
+    margin-top: 0px;
+    left: 0px;
     padding-top: 30px;
-    height: 570px;
+    height: 670px;
   }
   
 
@@ -23,9 +23,9 @@ footer {
 
 .container-footer{
     position: relative;
-    height: 800px;
+    height: 570px;
     padding-top: 30px;
-    max-width: 1000px;
+    max-width: 100px;
     padding: 0 4%;
     margin-top: 500px;
     margin: auto;
@@ -44,6 +44,7 @@ footer {
 }
 .footer-col h4{
     padding-left: 250px;
+    right: 80px;
     margin-top: 50px;
     margin-bottom: 50px;
     font-size: 22px;
@@ -57,9 +58,12 @@ footer {
 }
 .footer-col ul li{
     margin: 10px 0;
+    position: relative;
+    right: 100px;
 }
 .footer-col ul li a{
     font-size: 16px;
+    position: relative;
     padding-left: 300px;
  
     color: white;
@@ -92,10 +96,10 @@ footer {
     margin-bottom: 10px;
     outline: none;
     position: relative;
-    right: -200px;
+    right: -20px;
     border: 1px solid white;
     color: white;
-    background-color:  #050440;
+    background-color:  #050449;
 }
 .footer-col .form-sub input::placeholder{
     color: white;
@@ -105,7 +109,7 @@ footer {
     margin-top: 10px;
     padding: 10px; 
     position: relative;
-    right: -200px;
+    right: -20px;
     font-size: 17px;
     outline: none;
     border: none;
