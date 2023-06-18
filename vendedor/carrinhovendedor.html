@@ -12,15 +12,14 @@
 <body>
   <style>
     /* Estilo para o cabeçalho */
-    img{
+    img {
       width: 260px;
       margin-top: 8px;
       position: relative;
       margin-bottom: 100px;
-
     }
-    #h1 {
 
+    #h1 {
       text-align: center;
       margin-top: -190px;
       margin-bottom: 96px;
@@ -28,7 +27,6 @@
       position: relative;
       left: -30px;
       font-family: Arial, Helvetica, sans-serif;
-    
     }
 
     /* Estilo para a tabela do carrinho */
@@ -121,6 +119,7 @@
       <th>Variação</th>
       <th>Quantidade</th>
       <th>Preço Unitário</th>
+      <th>Preço Total</th>
       <th>Remover</th>
     </tr>
   </table>
@@ -130,61 +129,61 @@
       <span class="button-icon"><i class="fas fa-user-plus"></i></span>
     </div>
   </button>
-<style>
-.cadastrar-button {
-  background-color: transparent;
-  border: 2px solid #4CAF50;
-  color: #4CAF50;
-  position: relative;
-  right: -605px;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 4px;
-  overflow: hidden;
-  position: relative;
-  z-index: 1;
-}
+  <style>
+    .cadastrar-button {
+      background-color: transparent;
+      border: 2px solid #4CAF50;
+      color: #4CAF50;
+      position: relative;
+      right: -605px;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+    }
 
-.cadastrar-button .button-inner {
-  position: relative;
-}
+    .cadastrar-button .button-inner {
+      position: relative;
+    }
 
-.cadastrar-button .button-icon {
-  margin-left: 10px;
-  opacity: 1;
-  transition: opacity 0.3s ease-in-out;
-}
+    .cadastrar-button .button-icon {
+      margin-left: 10px;
+      opacity: 1;
+      transition: opacity 0.3s ease-in-out;
+    }
 
-.cadastrar-button::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #4CAF50;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  z-index: -1;
-  transition: opacity 0.3s ease-in-out;
-}
+    .cadastrar-button::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #4CAF50;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      z-index: -1;
+      transition: opacity 0.3s ease-in-out;
+    }
 
-.cadastrar-button:hover {
-  color: white;
-}
+    .cadastrar-button:hover {
+      color: white;
+    }
 
-.cadastrar-button:hover .button-icon {
-  opacity: 0;
-}
+    .cadastrar-button:hover .button-icon {
+      opacity: 0;
+    }
 
-.cadastrar-button:hover::after {
-  opacity: 1;
-}
-</style>  
+    .cadastrar-button:hover::after {
+      opacity: 1;
+    }
+  </style>
 
   <script>
     var carrinho = localStorage.getItem("carrinho");
@@ -203,7 +202,8 @@
         var quantidadeValue = document.createElement("span");
         var quantidadeDecreaseButton = document.createElement("button");
         var quantidadeIncreaseButton = document.createElement("button");
-        var precoCell = document.createElement("td");
+        var precoUnitarioCell = document.createElement("td");
+        var precoTotalCell = document.createElement("td");
         var removeButton = document.createElement("button");
 
         clienteCell.textContent = produto.cliente;
@@ -217,6 +217,7 @@
           var quantidade = parseInt(quantidadeValue.textContent);
           if (quantidade > 1) {
             quantidadeValue.textContent = quantidade - 1;
+            atualizarPrecoTotal(precoUnitarioCell.textContent, quantidade - 1, precoTotalCell);
           }
         });
 
@@ -225,9 +226,12 @@
         quantidadeIncreaseButton.addEventListener("click", function () {
           var quantidade = parseInt(quantidadeValue.textContent);
           quantidadeValue.textContent = quantidade + 1;
+          atualizarPrecoTotal(precoUnitarioCell.textContent, quantidade + 1, precoTotalCell);
         });
 
-        precoCell.Content= "15,00"; // preço do produto 
+        precoUnitarioCell.textContent = "15,00"; // preço unitário do produto 
+
+        precoTotalCell.textContent = "15,00"; // preço total inicialmente igual ao preço unitário
 
         removeButton.textContent = "Remover";
         removeButton.className = "remove-button";
@@ -245,7 +249,8 @@
         row.appendChild(produtoCell);
         row.appendChild(variacaoCell);
         row.appendChild(quantidadeCell);
-        row.appendChild(precoCell);
+        row.appendChild(precoUnitarioCell);
+        row.appendChild(precoTotalCell);
         row.appendChild(removeButton);
         cartItems.appendChild(row);
       });
@@ -253,10 +258,15 @@
       // Caso não haja itens no carrinho, exibe uma mensagem
       var emptyRow = document.createElement("tr");
       var emptyCell = document.createElement("td");
-      emptyCell.setAttribute("colspan", "6");
+      emptyCell.setAttribute("colspan", "7");
       emptyCell.textContent = "O carrinho está vazio";
       emptyRow.appendChild(emptyCell);
       cartItems.appendChild(emptyRow);
+    }
+
+    function atualizarPrecoTotal(precoUnitario, quantidade, precoTotalCell) {
+      var preco = parseFloat(precoUnitario.replace(",", ".")) * quantidade;
+      precoTotalCell.textContent = preco.toFixed(2).replace(".", ",");
     }
 
     function adicionarAoCarrinho() {
@@ -292,7 +302,6 @@
 
       alert("Item adicionado ao carrinho com sucesso!");
     }
-
   </script>
 </body>
 
