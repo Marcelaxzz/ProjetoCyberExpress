@@ -147,7 +147,7 @@ fieldset.grupo .campo {
         </div>
 
         <!-- Início do formulário -->
-        <form>
+        <form onsubmit="validarFormulario(event)">
 
             <fieldset class="grupo">
                 <!-- Campo do nome com legenda "nome" e css de classe "campo" -->
@@ -173,23 +173,23 @@ fieldset.grupo .campo {
             <div class="campo">
                 <label><strong>Qual tipo de empresa pertence ao cliente?</strong></label>
                 <label>
-                    <input type="radio" name="devweb" value="frontend" checked>Supermercado
+                    <input type="radio" name="sitepi1" value="sup" checked>Supermercado
                 </label>
                 <label>
-                    <input type="radio" name="devweb" value="backend">Bar
+                    <input type="radio" name="sitepi2" value="bar">Bar
                 </label>
                 <label>
-                    <input type="radio" name="devweb" value="fullstack">Mercearia
+                    <input type="radio" name="sitepi3" value="mer">Mercearia
                 </label>
                 <label>
-                    <input type="radio" name="devweb" value="fullstack">Outro
+                    <input type="radio" name="sitepi4" value="outro">Outro
                 </label>
             </div>
 
-            <!-- Campo de senioridade com 3 opções para escolha (select option) e css de classe "campo" -->
+            <!-- Campo de compras feitas pelos clientes com 3 opções para escolha (select option) e css de classe "campo" -->
             <div class="campo">
-                <label for="senioridade"><strong>Quantidade de compras feitas pelo cliente:</strong></label>
-                <select id="senioridade" required>
+                <label for="compras"><strong>Quantidade de compras feitas pelo cliente:</strong></label>
+                <select id="compras" required>
                   <option selected disabled value="">Selecione</option>
                   <option>de 50 a 90 compras</option>
                   <option>de 80 a 120 compras</option>
@@ -208,10 +208,44 @@ fieldset.grupo .campo {
             <button class="botao" type="submit" onsubmit="">Concluído</button>            
 
         </form>
-
+        <script>
+            // Função para exibir a mensagem de cadastro concluído
+            function exibirMensagem() {
+                alert("Cadastro concluído!");
+            }
+    
+            // Função para validar o formulário antes de enviar
+            function validarFormulario(event) {
+                var inputs = document.getElementsByTagName("input");
+                var select = document.getElementById("compras");
+                var textarea = document.getElementById("experiencia");
+                var formularioValido = true;
+    
+                for (var i = 0; i < inputs.length; i++) {
+                    if (inputs[i].hasAttribute("required") && inputs[i].value === "") {
+                        formularioValido = false;
+                        break;
+                    }
+                }
+    
+                if (select.value === "") {
+                    formularioValido = false;
+                }
+    
+                if (textarea.value === "") {
+                    formularioValido = false;
+                }
+    
+                if (!formularioValido) {
+                    event.preventDefault();
+                    alert("Por favor, preencha todos os campos obrigatórios.");
+                } else {
+                    exibirMensagem();
+                }
+            }
+        </script>
     </body>
 
 </html>
-
 
 
