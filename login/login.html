@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <title>Login Cyber Express</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <style>
+    body{
+        background-color: antiquewhite;
+    }
+  </style>
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css"><!--icones--> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"><!--alinhamentos-->
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+	<div class="section">
+		<div class="container">
+			<div class="row full-height justify-content-center">
+				<div class="col-12 text-center align-self-center py-5">
+					<div class="section pb-5 pt-5 pt-sm-2 text-center">
+						<h6 class="vendedorcliente"><span>Cliente </span><span>Vendedor</span></h6>
+			          	<input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
+			          	<label for="reg-log"></label>
+						<div class="card-3d-wrap mx-auto">
+							<div class="card-3d-wrapper">
+								<div class="card-front">
+									<div class="center-wrap">
+										<div class="section text-center">
+											<h4 class="mb-4 pb-3">Cliente</h4>
+											<div class="form-group">
+												<input type="text" class="form-style" placeholder="E-mail" id="clienteEmail">
+												<i class="input-icon uil uil-user"></i>
+											</div>	
+											<div class="form-group mt-2">
+												<input type="password" class="form-style" placeholder="Senha" id="clienteSenha">
+												<i class="input-icon uil uil-lock-alt"></i>
+											</div>
+											<div>
+												<button class="btn mt-4" onclick="loginCliente()">Entrar</button>
+											</div>
+											
+											<p class="mb-0 mt-4 text-center"><a href="index.html" class="link">ESQUECEU SUA SENHA?</a></p>
+											<br>
+											<a href="video/Conheça a Cyber Express.mp4" style="color: rgb(154, 11, 11); text-decoration: underline; font-weight: bold;">CONHEÇA NOSSA EMPRESA</a>
+
+
+										</div>
+									</div>
+								</div>
+								<div class="card-back">
+									<div class="center-wrap">
+										<div class="section text-center">
+											<h4 class="mb-3 pb-3">Vendedor</h4>
+											<div class="form-group">
+												<input type="text" class="form-style" placeholder="E-mail" id="vendedorEmail">
+												<i class="input-icon uil uil-user"></i>
+											</div>
+											<div class="form-group mt-2">
+												<input type="password" class="form-style" placeholder="Senha" id="vendedorSenha">
+												<i class="input-icon uil uil-lock-alt"></i>
+											</div>
+											<button class="btn mt-4" onclick="loginVendedor()">Entrar</button>
+											
+											<p class="mb-0 mt-4 text-center"><a href="index.html" class="link">ESQUECEU SUA SENHA?</a></p>
+											<br>
+											<a href="video/Conheça a Cyber Express.mp4" style="color: rgb(154, 11, 11); text-decoration: underline; font-weight: bold;">CONHEÇA NOSSA EMPRESA</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<script>
+						function loginCliente() {
+							var email = document.getElementById('clienteEmail').value;
+							var senha = document.getElementById('clienteSenha').value;
+
+							if (email === 'cliente@exemplo.com' && senha === 'senha123') {
+								window.location.href = 'cliente.html'; 
+							} else {
+								alert('Credenciais de cliente inválidas!'); 
+							}
+						}
+
+						function loginVendedor() {
+							var email = document.getElementById('vendedorEmail').value;
+							var senha = document.getElementById('vendedorSenha').value;
+
+							// Verifica se o nome e a senha são iguais aos esperados
+							if (email === 'vendedor@exemplo.com' && senha === 'senha123') {
+								window.location.href = 'vendedor.html'; 
+							} else {
+								alert('Credenciais de vendedor inválidas!'); 
+							}
+						}
+					</script>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
