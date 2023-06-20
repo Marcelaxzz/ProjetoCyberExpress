@@ -1,2 +1,0 @@
-# ProjetoCyberExpress
-Projeto Distribuidora CyberExpress.
