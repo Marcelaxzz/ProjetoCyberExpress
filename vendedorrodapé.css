@@ -1,0 +1,134 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+footer {
+    position: relative;
+    background: linear-gradient(black, #050440);
+    width: 120%;
+    left:-196px;
+    margin-top: 0px;
+    padding-top: 30px;
+    height: 670px;
+  }
+  
+
+
+
+.container-footer{
+    position: relative;
+    right: 500px;
+    height: 570px;
+    padding-top: 30px;
+    max-width: 100px;
+    padding: 0 4%;
+    margin-top: 500px;
+    margin: auto;
+}
+.row-footer{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-col{
+    margin-top: 50px;
+    margin-bottom: 10px;
+    margin-top: 50px;
+    width: 25%;
+    padding: 0 15px;
+}
+.footer-col h4{
+    padding-left: 250px;
+    right: 80px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 22px;
+    color: white;
+    font-weight: 500;
+    position: relative;
+    text-transform: uppercase;
+}
+.footer-col ul{
+    list-style: none;
+}
+.footer-col ul li{
+    margin: 10px 0;
+    position: relative;
+    right: 100px;
+}
+.footer-col ul li a{
+    font-size: 16px;
+    position: relative;
+    padding-left: 300px;
+ 
+    color: white;
+    text-transform: none;
+    font-weight: 300;
+    display: block;
+    
+}
+.footer-col ul li a:hover{
+    color: #cecdcd;
+
+}
+.footer-col .medias-socias{
+    margin-top: 30px;
+}
+
+
+.footer-col .medias-socias a i{
+    font-size: 20px;
+}
+
+.footer-col .medias-socias a:hover{
+    color: #415aca;
+    background-color: white;
+}
+.footer-col .form-sub input{
+    width: 50%;
+    padding: 10px;
+    font-size: 15px;
+    margin-bottom: 10px;
+    outline: none;
+    position: relative;
+    right: -20px;
+    border: 1px solid white;
+    color: white;
+    background-color:  #050449;
+}
+.footer-col .form-sub input::placeholder{
+    color: white;
+}
+.footer-col .form-sub button{
+    width: 50%;
+    margin-top: 10px;
+    padding: 10px; 
+    position: relative;
+    right: -20px;
+    font-size: 17px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: #415aca;
+    border-radius: 3px;
+    font-weight: bold;
+    background-color: white;        
+}
+/* Responsivo */
+@media (max-width: 800px) {
+    .footer-col{
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+@media (max-width:600px){
+    
+}
+
+.footer-col{
+    width: 100%;
+}   

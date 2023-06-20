@@ -1,0 +1,135 @@
+
+  body {
+    margin: 0;
+  }
+  
+  .wrapper {
+    margin-top: -300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .submit-button {
+    outline:none;
+    
+    position: relative;
+    bottom: 0;
+    
+    height: 50px;
+    padding-top: 0px;
+    width: 350px;
+    
+    
+    border: 0px;
+    border-radius: 50px;
+    cursor: pointer;
+    
+    font-family: 'Open Sans';
+    font-size: 16px;
+  /*   line-height: 2; */
+    color: #FBFFDF;
+      
+    background-color: #050449;
+    box-shadow: 0px 0px 25px 0px rgba(62,165,254,0.5);
+    
+    transition: all .3s ease-in;
+  }
+  
+  .submit-button-unclickable {
+    pointer-events: none;
+  }
+  
+  .submit-button-success {
+    background-color: #6AC631;
+    box-shadow: 0px 0px 25px 0px rgba(44, 220, 53, 0.5);
+  }
+  
+  .submit-button-failure {
+    background-color: #A81313;
+    box-shadow: 0px 0px 25px 0px rgba(168, 38, 36, 0.5);
+  }
+  
+  .button-inner {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    border-radius: 50px;
+    height: 100%;
+    line-height: 3em;
+  }
+  
+  .button-text {
+    transition: all .3s ease-in;
+    opacity: 1;
+  }
+  
+  .status-badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    
+    width: 44px;
+    height: 44px;
+    
+    border-radius: 50px;
+    
+    position: absolute;
+    right: 3px;
+    
+    background-color: #2184E7;
+    
+    transition: all .3s ease-in;
+  }
+  
+  .status-badge-success {
+    background-color: #52AD29;
+  }
+  
+  .status-badge-failure {
+    background-color: #661716;
+  }
+  
+  .status-badge-expanded {
+    width: 50px;
+    height: 50px;
+    right: 0px;
+  }
+  
+  .badge {
+    vertical-align: 0;
+    position: absolute;
+    
+    transition: all .3s ease-in;
+    opacity: 1;
+  }
+  
+ 
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .spin-badge {
+    animation: spin 1s ease infinite;
+  }
+  
+  .button-collapsed {
+  
+    width: 50px;
+  }
+  
+  .translucent{
+    opacity: 0;
+  }
+  
+  .opaque {
+    opacity: 1;
+  }
