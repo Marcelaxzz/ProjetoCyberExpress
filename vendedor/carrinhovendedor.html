@@ -6,8 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="carrinho.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-/L9ojDRfC3lD4IQQWUHwFzMsLjXRXls9tRpXuRgrtqaywvTSHwbKTcdFQt+j+UxIDoOcq3w9tsERBrUt8WEV/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
   <title>Carrinho do Vendedor</title>
 </head>
 
@@ -125,15 +123,12 @@
       <th>Remover</th>
     </tr>
   </table>
-  <button class="cadastrar-button" onclick="window.location.href=''">
+  <button class="cadastrar-button" onclick="finalizarPedido()">
     <div class="button-inner">
-      <i class="fas fa-user-plus"></i>
       <span id="button-text">Finalizar pedido do cliente</span>
+      <span class="button-icon"><i class="fas fa-user-plus"></i></span>
     </div>
   </button>
-  
-  
-  
   <style>
     .cadastrar-button {
       background-color: transparent;
@@ -274,38 +269,20 @@
       precoTotalCell.textContent = preco.toFixed(2).replace(".", ",");
     }
 
-    function adicionarAoCarrinho() {
-      var clienteSelect = document.getElementById("cliente");
-      var produtoSelect = document.getElementById("produto");
-      var variacaoSelect = document.getElementById("variacao");
-
-      var cliente = clienteSelect.value;
-      var produto = produtoSelect.value;
-      var variacao = variacaoSelect.value;
-
-      if (cliente === "" || produto === "" || variacao === "") {
-        alert("Por favor, selecione todas as opções antes de adicionar ao carrinho.");
-        return;
-      }
-
-      var item = {
-        cliente: cliente,
-        produto: produto,
-        variacao: variacao
-      };
-
+    function finalizarPedido() {
       var carrinho = localStorage.getItem("carrinho");
 
       if (carrinho) {
         carrinho = JSON.parse(carrinho);
+
+        if (carrinho.length > 0) {
+          alert("Pedido enviado com sucesso!");
+        } else {
+          alert("Adicione itens no carrinho antes de finalizar o pedido do cliente.");
+        }
       } else {
-        carrinho = [];
+        alert("Adicione itens no carrinho antes de finalizar o pedido do cliente.");
       }
-
-      carrinho.push(item);
-      localStorage.setItem("carrinho", JSON.stringify(carrinho));
-
-      alert("Item adicionado ao carrinho com sucesso!");
     }
   </script>
 </body>
